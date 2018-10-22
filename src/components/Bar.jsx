@@ -1,9 +1,9 @@
 import React from 'react'
-import ProgressBar from './ProgressBar'
+import Slider from 'rc-slider/lib/Slider';
 
 const Bar = () => (
     <div className="bar">
-        <ProgressBar />
+        <Slider />
     </div>
 )
 
