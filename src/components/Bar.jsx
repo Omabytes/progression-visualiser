@@ -1,10 +1,16 @@
 import React from 'react'
-import Slider from 'rc-slider/lib/Slider';
+import Slider from 'rc-slider/lib/Slider'
+import 'rc-slider/assets/index.css'
 
-const Bar = () => (
+
+const Bar = ({ score, updateScore }) => (
     <div className="bar">
-        <Slider />
+        <Slider
+            defaultValue={score}
+            onAfterChange={updateScore}
+        />
     </div>
 )
+
 
 export default Bar
