@@ -9,8 +9,8 @@ class BarContainer extends Component {
         return (
             <div className="bar-container">
                 <Bar
-                    score={this.props.score}
-                    updateScore={this.props.updateScore}
+                    score={this.props[this.props.skillName]}
+                    updateScore={(newScore) => this.props.updateScore(this.props.skillName, newScore)}
                 />
             </div>
         )
@@ -18,8 +18,11 @@ class BarContainer extends Component {
 
 }
 
-function mapStateToProps({ barReducer }) {
-    return { score: barReducer.score }
+function mapStateToProps({ barReducer }, ...ownProps) {
+    return {
+        ...barReducer,
+        ...ownProps
+    }
 }
 
 function mapDispatchToProps(dispatch) {

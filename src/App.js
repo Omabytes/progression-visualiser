@@ -12,11 +12,12 @@ class App extends Component {
         </header>
         <body>
           <div className="skills">
-            <Skill />
-            <Skill />
-            <Skill />
-            <Skill />
-            <Skill />
+            <Skill skillName="Charisma"/>
+            <Skill skillName="Constitution"/>
+            <Skill skillName="Dexterity"/>
+            <Skill skillName="Intelligence"/>
+            <Skill skillName="Strength"/>
+            <Skill skillName="Wisdom"/>
           </div>
         </body>
       </div>
