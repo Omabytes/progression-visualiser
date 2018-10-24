@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import BarContainer from './containers/BarContainer';
+import React, { Component } from 'react'
+import Skill from './components/Skill'
+import SelectorContainer from './containers/SelectorContainer'
 import './App.css';
 
 class App extends Component {
@@ -7,8 +8,17 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <BarContainer />
+          <SelectorContainer />
         </header>
+        <body>
+          <div className="skills">
+            <Skill />
+            <Skill />
+            <Skill />
+            <Skill />
+            <Skill />
+          </div>
+        </body>
       </div>
     );
   }

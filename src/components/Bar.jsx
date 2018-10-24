@@ -1,5 +1,5 @@
 import React from 'react'
-import Slider from 'rc-slider/lib/Slider'
+import Slider from 'rc-slider'
 import 'rc-slider/assets/index.css'
 
 
