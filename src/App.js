@@ -3,6 +3,19 @@ import Skill from './components/Skill'
 import SelectorContainer from './containers/SelectorContainer'
 import './App.css';
 
+const skillNames = [
+  "Charisma",
+  "Constitution",
+  "Dexterity",
+  "Intelligence",
+  "Strength",
+  "Wisdom"
+]
+
+const generateSkills = function(skillName) {
+  return <Skill skillName={skillName} />
+}
+
 class App extends Component {
   render() {
     return (
@@ -12,12 +25,7 @@ class App extends Component {
         </header>
         <body>
           <div className="skills">
-            <Skill skillName="Charisma"/>
-            <Skill skillName="Constitution"/>
-            <Skill skillName="Dexterity"/>
-            <Skill skillName="Intelligence"/>
-            <Skill skillName="Strength"/>
-            <Skill skillName="Wisdom"/>
+            {skillNames.map(generateSkills)}
           </div>
         </body>
       </div>
