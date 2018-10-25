@@ -1,9 +1,14 @@
 import React from 'react'
 import BarContainer from '../containers/BarContainer'
 
-const Skill = ({ skillName }) => (
+const Skill = ({ skillName, updateRoute }) => (
     <div className="skill">
-        <div className="skillText">{skillName}</div>
+        <div
+            className="skillText"
+            onClick={updateRoute}
+        >
+            {skillName}
+        </div>
         <BarContainer skillName={skillName}/>
     </div>
 )

@@ -1,5 +1,5 @@
 import React from 'react'
-import Skill from '../components/Skill'
+import SkillContainer from '../containers/SkillContainer'
 import SelectorContainer from '../containers/SelectorContainer'
 
 const roles = [
@@ -18,7 +18,7 @@ const skillNames = [
 ]
 
 const generateSkills = function(skillName) {
-    return <Skill key={skillName} skillName={skillName} />
+    return <SkillContainer key={skillName} skillName={skillName} />
 }
 
 const HomePage = () => (
