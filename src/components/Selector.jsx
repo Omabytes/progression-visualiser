@@ -2,9 +2,10 @@ import React from 'react'
 import Select from 'rc-select'
 import 'rc-select/assets/index.css'
 
-const Selector = () => (
+const Selector = ({ updateRole }) => (
     <div className="selector">
         <Select
+            onChange={updateRole}
             placeholder="Choose Role..."
         >
             <option value="Developer">Developer</option>

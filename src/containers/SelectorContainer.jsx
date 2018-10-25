@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import { updateRole } from "../actions/updateRole";
 import Selector from '../components/Selector';
 
 class SelectorContainer extends Component {
     render() {
         return (
             <div className="selector-container">
-                <Selector />
+                <Selector 
+                    updateRole={(newRole) => this.props.updateRole(newRole)}
+                />
             </div>
         )
     }
@@ -15,11 +18,13 @@ class SelectorContainer extends Component {
 }
 
 function mapStateToProps({ selectorReducer }) {
-    return { }
+    return { 
+        ...selectorReducer
+    }
 }
 
 function mapDispatchToProps(dispatch) {
-    return { ...bindActionCreators({ }, dispatch) }
+    return { ...bindActionCreators({ updateRole }, dispatch) }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SelectorContainer)
