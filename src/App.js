@@ -3,6 +3,12 @@ import Skill from './components/Skill'
 import SelectorContainer from './containers/SelectorContainer'
 import './App.css';
 
+const roles = [
+  "Cleric",
+  "Druid",
+  "Monk"
+]
+
 const skillNames = [
   "Charisma",
   "Constitution",
@@ -21,7 +27,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <SelectorContainer />
+          <SelectorContainer roles={roles}/>
         </header>
         <body>
           <div className="skills">

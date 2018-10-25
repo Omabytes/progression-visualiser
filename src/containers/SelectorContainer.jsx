@@ -10,6 +10,7 @@ class SelectorContainer extends Component {
             <div className="selector-container">
                 <Selector 
                     updateRole={(newRole) => this.props.updateRole(newRole)}
+                    roles={this.props.roles}
                 />
             </div>
         )
@@ -17,9 +18,10 @@ class SelectorContainer extends Component {
 
 }
 
-function mapStateToProps({ selectorReducer }) {
+function mapStateToProps({ selectorReducer }, ...ownProps) {
     return { 
-        ...selectorReducer
+        ...selectorReducer,
+        ...ownProps
     }
 }
 
