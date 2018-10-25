@@ -19,7 +19,7 @@ const skillNames = [
 ]
 
 const generateSkills = function(skillName) {
-  return <Skill skillName={skillName} />
+  return <Skill key={skillName} skillName={skillName} />
 }
 
 class App extends Component {

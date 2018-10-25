@@ -7,8 +7,9 @@ const Selector = ({ updateRole, roles }) => (
         <Select
             onChange={updateRole}
             placeholder="Choose Role..."
+            showSearch={false}
         >
-            {roles.map(role => <option value={role}>{role}</option>)}
+            {roles.map(role => <option key={role}>{role}</option>)}
         </Select>
     </div>
 )
