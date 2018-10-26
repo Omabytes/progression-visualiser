@@ -18,7 +18,7 @@ const skillNames = [
 ]
 
 const generateSkills = function(skillName) {
-    return <SkillContainer key={skillName} skillName={skillName} />
+    return <SkillContainer key={skillName} skillName={skillName} linked={true} />
 }
 
 const HomePage = () => (
@@ -26,11 +26,10 @@ const HomePage = () => (
         <header className="App-header">
             <SelectorContainer roles={roles}/>
         </header>
-        <body>
-            <div className="skills">
-                {skillNames.map(generateSkills)}
-            </div>
-        </body>
+
+        <div className="skills">
+            {skillNames.map(generateSkills)}
+        </div>
     </div>
 )
 
