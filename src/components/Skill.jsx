@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import BarContainer from '../containers/BarContainer'
 
 const Skill = ({ skillName, updateRoute }) => (
@@ -7,7 +8,9 @@ const Skill = ({ skillName, updateRoute }) => (
             className="skillText"
             onClick={updateRoute}
         >
-            {skillName}
+            <Link to="/skill">
+                {skillName}
+            </Link>
         </div>
         <BarContainer skillName={skillName}/>
     </div>
