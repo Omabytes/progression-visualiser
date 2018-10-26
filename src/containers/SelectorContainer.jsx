@@ -19,10 +19,9 @@ class SelectorContainer extends Component {
 
 }
 
-function mapStateToProps({ selectorReducer }, ...ownProps) {
+function mapStateToProps({ selectorReducer }) {
     return { 
-        ...selectorReducer,
-        ...ownProps
+        ...selectorReducer
     }
 }
 

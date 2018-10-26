@@ -18,10 +18,9 @@ class SkillContainer extends Component {
 
 }
 
-function mapStateToProps({ skillReducer }, ...ownProps) {
+function mapStateToProps({ skillReducer }) {
     return { 
-        ...skillReducer,
-        ...ownProps
+        ...skillReducer
     }
 }
 
