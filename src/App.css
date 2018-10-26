@@ -51,6 +51,16 @@
   grid-auto-flow: dense;
 }
 
+.attributes {
+  background-color: rgb(3, 99, 11);
+  height: auto;
+  margin:20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, auto));
+  grid-auto-rows: auto;
+  grid-auto-flow: dense;
+}
+
 .skillText {
   display: flex;
   width: auto;
