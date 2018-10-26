@@ -8,7 +8,7 @@ const generateSkills = function(skillName) {
     return <SkillContainer key={skillName} skillName={skillName} />
 }
 
-const SkillPage = ({ route }) => (
+const SkillPage = ({ route, role }) => (
     <div className="App">
         <header className="App-header">
             <Link to="/">
@@ -18,15 +18,16 @@ const SkillPage = ({ route }) => (
         </header>
         <body>
             <div className="attributes">
-                {attributes[route].map(generateSkills)}
+                {attributes[role][route].map(generateSkills)}
             </div>
         </body>
     </div>
 )
 
-function mapStateToProps({ skillReducer }) {
+function mapStateToProps({ skillReducer, selectorReducer }) {
     return {
-        ...skillReducer
+        ...skillReducer,
+        ...selectorReducer
     }
 }
 

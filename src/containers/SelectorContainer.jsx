@@ -11,6 +11,7 @@ class SelectorContainer extends Component {
                 <Selector 
                     updateRole={(newRole) => this.props.updateRole(newRole)}
                     roles={this.props.roles}
+                    currentRole={this.props.role}
                 />
             </div>
         )
