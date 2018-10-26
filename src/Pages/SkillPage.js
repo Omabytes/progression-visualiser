@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import SkillContainer from '../containers/SkillContainer'
 import { attributes } from '../resources/attributes'
@@ -7,6 +7,10 @@ import { attributes } from '../resources/attributes'
 const generateSkills = function(skillName) {
     return <SkillContainer key={skillName} skillName={skillName} />
 }
+
+const returnToHomepage = (
+    <Redirect to='/' />
+)
 
 const SkillPage = ({ route, role }) => (
     <div className="App">
@@ -18,7 +22,7 @@ const SkillPage = ({ route, role }) => (
         </header>
         <body>
             <div className="attributes">
-                {attributes[role][route].map(generateSkills)}
+                {role != null && route != null ? attributes[role][route].map(generateSkills) : returnToHomepage}
             </div>
         </body>
     </div>
