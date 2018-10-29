@@ -6,13 +6,14 @@ import Skill from '../components/Skill'
 
 class SkillContainer extends Component {
     render() {
+        let tp = this.props
         return (
             <div className="skill-container">
                 <Skill 
-                    skillName={this.props.skillName}
-                    updateRoute={() => this.props.updateRoute(this.props.skillName)}
-                    linked={this.props.linked}
-                    barDisabled={this.props.barDisabled}
+                    skillName={tp.skillName}
+                    updateRoute={() => tp.updateRoute(tp.skillName)}
+                    linked={tp.linked}
+                    barDisabled={tp.barDisabled}
                 />
             </div>
         )
