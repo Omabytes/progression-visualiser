@@ -4,8 +4,8 @@ import { connect } from 'react-redux'
 import { updateScore } from '../actions/updateScore'
 import Bar from '../components/Bar';
 
-function updateScores(updateScore, skillName, newScore) {
-    updateScore(skillName, newScore)
+function updateScores(updateScore, skillName, newScore, role, route) {
+    updateScore(skillName, newScore, role, route)
 }
 
 class BarContainer extends Component {
@@ -14,10 +14,11 @@ class BarContainer extends Component {
             <div className="bar-container">
                 <Bar
                     score={this.props[this.props.skillName]}
-                    updateScore={(newScore) => updateScores(
-                        this.props.updateScore,
+                    updateScore={(newScore) => updateScores(this.props.updateScore,
                         this.props.skillName,
-                        newScore
+                        newScore,
+                        this.props.role,
+                        this.props.route
                     )}
                     disabled={this.props.disabled}
                 />
@@ -27,9 +28,11 @@ class BarContainer extends Component {
 
 }
 
-function mapStateToProps({ barReducer }) {
+function mapStateToProps({ barReducer, skillReducer, selectorReducer }) {
     return {
-        ...barReducer
+        ...barReducer,
+        ...skillReducer,
+        ...selectorReducer
     }
 }
 

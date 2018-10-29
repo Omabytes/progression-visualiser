@@ -1,5 +1,7 @@
-export const updateScore = (skillName, score) => ({
+export const updateScore = (skillName, score, role, route) => ({
     type: 'UPDATE_SCORE',
     skillName,
-    score
+    score,
+    role,
+    route
 })
