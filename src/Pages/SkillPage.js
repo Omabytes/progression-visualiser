@@ -5,7 +5,12 @@ import SkillContainer from '../containers/SkillContainer'
 import { attributes } from '../resources/attributes'
 
 const generateSkills = function(skillName) {
-    return <SkillContainer key={skillName} skillName={skillName} linked={false} />
+    return <SkillContainer
+        key={skillName}
+        skillName={skillName}
+        linked={false}
+        barDisabled={false}
+    />
 }
 
 const returnToHomepage = (
@@ -19,7 +24,11 @@ const SkillPage = ({ route, role }) => (
                 Back
             </Link>
             { route } ------------------- Overall skill progress bar.
-            <SkillContainer skillName={ route } linked={false} /> 
+            <SkillContainer
+                skillName={ route }
+                linked={false}
+                barDisabled={true}
+            /> 
         </header>
         <div className="attributes">
             {role != null && route != null ? attributes[role][route].map(generateSkills) : returnToHomepage}

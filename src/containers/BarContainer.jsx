@@ -11,6 +11,7 @@ class BarContainer extends Component {
                 <Bar
                     score={this.props[this.props.skillName]}
                     updateScore={(newScore) => this.props.updateScore(this.props.skillName, newScore)}
+                    disabled={this.props.disabled}
                 />
             </div>
         )

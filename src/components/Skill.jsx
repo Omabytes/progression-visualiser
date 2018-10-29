@@ -8,7 +8,7 @@ const insertLink = (skillName) => (
     </Link>
 )
 
-const Skill = ({ skillName, updateRoute, linked }) => (
+const Skill = ({ skillName, updateRoute, linked, barDisabled }) => (
     <div className="skill">
         <div
             className="skillText"
@@ -16,7 +16,10 @@ const Skill = ({ skillName, updateRoute, linked }) => (
         >
             {linked ? insertLink(skillName) : skillName}
         </div>
-        <BarContainer skillName={skillName}/>
+        <BarContainer
+            skillName={skillName}
+            disabled={barDisabled}    
+        />
     </div>
 )
 

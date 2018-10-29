@@ -18,7 +18,12 @@ const skillNames = [
 ]
 
 const generateSkills = function(skillName) {
-    return <SkillContainer key={skillName} skillName={skillName} linked={true} />
+    return <SkillContainer
+        key={skillName}
+        skillName={skillName}
+        linked={true}
+        barDisabled={true}
+    />
 }
 
 const HomePage = () => (

@@ -12,6 +12,7 @@ class SkillContainer extends Component {
                     skillName={this.props.skillName}
                     updateRoute={() => this.props.updateRoute(this.props.skillName)}
                     linked={this.props.linked}
+                    barDisabled={this.props.barDisabled}
                 />
             </div>
         )
