@@ -10,11 +10,13 @@ function updateScores(updateScore, skillName, newScore, role, route) {
 
 class BarContainer extends Component {
     render() {
+        let record = this.props.barReducer.find(x => (x.role === this.props.role && x.route === this.props.route && x.skillName === this.props.skillName))
         return (
             <div className="bar-container">
                 <Bar
-                    score={this.props[this.props.skillName]}
-                    updateScore={(newScore) => updateScores(this.props.updateScore,
+                    score={record === undefined ? 0 : record.score}
+                    updateScore={(newScore) => updateScores(
+                        this.props.updateScore,
                         this.props.skillName,
                         newScore,
                         this.props.role,
@@ -30,7 +32,7 @@ class BarContainer extends Component {
 
 function mapStateToProps({ barReducer, skillReducer, selectorReducer }) {
     return {
-        ...barReducer,
+        barReducer,
         ...skillReducer,
         ...selectorReducer
     }
