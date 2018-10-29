@@ -18,10 +18,9 @@ class BarContainer extends Component {
 
 }
 
-function mapStateToProps({ barReducer }, ...ownProps) {
+function mapStateToProps({ barReducer }) {
     return {
-        ...barReducer,
-        ...ownProps
+        ...barReducer
     }
 }
 
