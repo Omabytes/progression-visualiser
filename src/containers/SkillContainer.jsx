@@ -11,16 +11,16 @@ class SkillContainer extends Component {
                 <Skill 
                     skillName={this.props.skillName}
                     updateRoute={() => this.props.updateRoute(this.props.skillName)}
+                    linked={this.props.linked}
                 />
             </div>
         )
     }
-
 }
 
 function mapStateToProps({ skillReducer }) {
     return { 
-        ...skillReducer
+        route: skillReducer.route
     }
 }
 

@@ -2,15 +2,19 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import BarContainer from '../containers/BarContainer'
 
-const Skill = ({ skillName, updateRoute }) => (
+const insertLink = (skillName) => (
+    <Link to="/skill">
+        {skillName}
+    </Link>
+)
+
+const Skill = ({ skillName, updateRoute, linked }) => (
     <div className="skill">
         <div
             className="skillText"
-            onClick={updateRoute}
+            onClick={linked ? updateRoute : null}
         >
-            <Link to="/skill">
-                {skillName}
-            </Link>
+            {linked ? insertLink(skillName) : skillName}
         </div>
         <BarContainer skillName={skillName}/>
     </div>
