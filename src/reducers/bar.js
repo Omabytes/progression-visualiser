@@ -1,28 +1,25 @@
-const initialState = {
-    // Charisma: 50,
-    // Constitution: 50,
-    // Dexterity: 50,
-    // Intelligence: 50,
-    // Strength: 50,
-    // Wisdom: 50
-}
+const initialState = []
+
+const fromAction = action => ({
+    role: action.role,
+    route: action.route,
+    skillName: action.skillName,
+    score: action.score
+})
 
 export default function barReducer(state = initialState, action = {}) {
     switch (action.type) {
         case "UPDATE_SCORE":
-        console.log(state, action.role, action.route, action.skillName, action.score)
-        // let s = state;
-        // s[action.role][action.route]
-            return ({
-                ...state,
-                [action.role]: {
-                    // ...state[action.role],
-                    [action.route]: {
-                        // ...state[action.role][action.route],
-                        [action.skillName]: action.score
-                    }
-                }
-            })
+            if (state.findIndex(s => (s.role === action.role && s.route === action.route && s.skillName === action.skillName)) === -1) {
+                return [
+                    ...state,
+                    fromAction(action)
+                ]
+            }
+
+            return state.map(s => (s.role === action.role && s.route === action.route && s.skillName === action.skillName) ?
+                { ...s, score: action.score } :
+                s)
 
         default: return state
     }
