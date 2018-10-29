@@ -1,21 +1,8 @@
 import React from 'react'
 import SkillContainer from '../containers/SkillContainer'
 import SelectorContainer from '../containers/SelectorContainer'
-
-const roles = [
-    "Cleric",
-    "Druid",
-    "Monk"
-]
-
-const skillNames = [
-    "Charisma",
-    "Constitution",
-    "Dexterity",
-    "Intelligence",
-    "Strength",
-    "Wisdom"
-]
+import { skills } from '../resources/skills';
+import { roles } from '../resources/roles';
 
 const generateSkills = function(skillName) {
     return <SkillContainer
@@ -33,7 +20,7 @@ const HomePage = () => (
         </header>
 
         <div className="skills">
-            {skillNames.map(generateSkills)}
+            {skills.map(generateSkills)}
         </div>
     </div>
 )
