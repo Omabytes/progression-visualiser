@@ -5,11 +5,20 @@ import 'rc-slider/assets/index.css'
 
 const Bar = ({ score, updateScore, disabled }) => (
     <div className="bar">
+    {
+        disabled
+        ?
         <Slider
-            defaultValue={score}
+            value={score}
             onAfterChange={updateScore}
             disabled={disabled}
         />
+        : 
+        <Slider
+            defaultValue={score}
+            onAfterChange={updateScore}
+        />
+    } 
     </div>
 )
 

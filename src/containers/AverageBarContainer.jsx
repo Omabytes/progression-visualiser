@@ -5,17 +5,19 @@ import { updateScore } from '../actions/updateScore'
 import Bar from '../components/Bar';
 
 
-function getAverage(role, route) {
-    return 100
+function getAverage(role, skillName, barReducer) {
+    if (role === null) return 0
+    let matches = barReducer.filter(el => el.role === role && el.route === skillName)
+    return matches.reduce((a, c) => a + c.score, 0) / Math.max(matches.length, 1)
 }
 
-class BarContainer extends Component {
+class AverageBarContainer extends Component {
     render() {
         let tp = this.props
         return (
             <div className="bar-container">
                 <Bar
-                    score={getAverage(tp.role, tp.route)}
+                    score={getAverage(tp.role, tp.skillName, tp.barReducer)}
                     disabled={tp.disabled}
                 />
             </div>
@@ -36,4 +38,4 @@ function mapDispatchToProps(dispatch) {
     return { ...bindActionCreators({ updateScore }, dispatch) }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(BarContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(AverageBarContainer)

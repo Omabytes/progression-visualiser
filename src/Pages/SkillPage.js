@@ -23,7 +23,6 @@ const SkillPage = ({ route, role }) => (
             <Link to="/">
                 Back
             </Link>
-            { route } ------------------- Overall skill progress bar.
             <SkillContainer
                 skillName={ route }
                 linked={false}
