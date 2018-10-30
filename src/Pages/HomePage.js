@@ -1,8 +1,8 @@
 import React from 'react'
 import SkillContainer from '../containers/SkillContainer'
 import SelectorContainer from '../containers/SelectorContainer'
-import { skills } from '../resources/skills';
-import { roles } from '../resources/roles';
+import { skills } from '../resources/skills'
+import { attributes } from '../resources/attributes'
 
 const generateSkills = function(skillName) {
     return <SkillContainer
@@ -16,7 +16,7 @@ const generateSkills = function(skillName) {
 const HomePage = () => (
     <div className="App">
         <header className="App-header">
-            <SelectorContainer roles={roles}/>
+            <SelectorContainer roles={Object.keys(attributes)}/>
         </header>
 
         <div className="skills">
