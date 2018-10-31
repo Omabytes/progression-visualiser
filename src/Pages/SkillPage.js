@@ -25,13 +25,15 @@ const SkillPage = ({ route, role }) => (
                     Back
                 </Link>
             </div>
-            <SkillContainer
-                skillName={ route }
-                linked={false}
-                barDisabled={true}
-            /> 
+            <div className='skill-average-bar'>
+                <SkillContainer
+                    skillName={ route }
+                    linked={false}
+                    barDisabled={true}
+                /> 
+            </div>
         </header>
-        <div className="attributes">
+        <div className="skills">
             {role != null && route != null ? attributes[role][route].map(generateSkills) : returnToHomepage}
         </div>
     </div>

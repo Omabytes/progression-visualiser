@@ -7,6 +7,29 @@ div {
   user-select: none;
 }
 
+.App {
+  text-align: center;
+}
+
+.App-header {
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: calc(10px + 2vmin);
+  color: black;
+}
+
+.back {
+  margin-left: 40px;
+}
+
+.bar-container {
+  display: flex;
+  align-items: flex-end;
+  width: auto;
+}
+
 .link {
   text-decoration: none;
   color: black;
@@ -23,41 +46,20 @@ div {
   background-color: rgb(43, 179, 187);
 }
 
-.App {
-  text-align: center;
-}
-
-.App-header {
-  min-height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: calc(10px + 2vmin);
-  color: black;
+.rc-select {
+  width: 200px;
 }
 
 .rc-slider {
   display: flex;
   width: 200px;
-  margin: 20px;
   align-items: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .rc-slider-handle {
   opacity: 0;
-}
-
-.back {
-  margin-left: 40px;
-}
-
-.bar-container {
-  display: flex;
-  align-items: flex-end;
-}
-
-.rc-select {
-  width: 200px;
 }
 
 .selector-container {
@@ -70,33 +72,23 @@ div {
 }
 
 .skill {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto;
+  grid-auto-rows: auto;
+  grid-auto-flow: dense;
   margin: 20px;
-  justify-content: center;
-  align-items: center;
+  width: auto;
 }
 
-.skills {
-  background-color: rgb(223, 244, 245);
-  height: auto;
-  margin:20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, auto));
-  grid-auto-rows: auto;
-  grid-auto-flow: dense;
+.skill-average-bar {
+  margin-right: 20px;
 }
 
-.attributes {
-  background-color: rgb(223, 244, 245);
-  height: auto;
-  margin:20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, auto));
-  grid-auto-rows: auto;
-  grid-auto-flow: dense;
+.skill-container {
+  width: auto;
 }
 
-.skillText {
+.skill-text {
   display: flex;
   width: auto;
   height: 100%;
@@ -104,4 +96,17 @@ div {
   font-weight: 600;
   align-items: center;
   text-decoration: none;
+}
+
+.skills {
+  background-color: rgb(223, 244, 245);
+  height: auto;
+  margin: 20px;
+  display: grid;
+  grid-template-columns: auto;
+  grid-auto-rows: auto;
+  grid-auto-flow: dense;
+  transition-delay: 0;
+  transition-duration: 2s;
+  transition-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1);
 }

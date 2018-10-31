@@ -24,7 +24,7 @@ const insertBar = (barDisabled, skillName) => (
 const Skill = ({ skillName, updateRoute, linked, barDisabled }) => (
     <div className="skill">
         <div
-            className="skillText"
+            className="skill-text"
             onClick={linked ? updateRoute : null}
         >
             {linked ? insertLink(skillName) : skillName}
