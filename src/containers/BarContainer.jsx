@@ -6,6 +6,8 @@ import Bar from '../components/Bar';
 
 function updateScores(updateScore, skillName, newScore, role, route) {
     updateScore(skillName, newScore, role, route)
+    // This fixes a bug with rc-slider that doesn't allow continued click'n'drag when a slider has focus
+    document.activeElement.blur()
 }
 
 class BarContainer extends Component {

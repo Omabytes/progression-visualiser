@@ -10,12 +10,12 @@ const marks = {
     '89': ''
 }
 
-const styledMarks = {
-    '11': '',
-    '37': '',
-    '63': '',
-    '89': ''
-}
+// const styledMarks = {
+//     '11': '',
+//     '37': '',
+//     '63': '',
+//     '89': ''
+// }
 
 const railStyle = {
     backgroundColor: 'rgb(225, 233, 230)',
@@ -34,7 +34,6 @@ const Bar = ({ score, updateScore, disabled }) => (
         ?
         <Slider
             value={score}
-            onAfterChange={updateScore}
             disabled={disabled}
             marks={marks}
             railStyle={railStyle}
