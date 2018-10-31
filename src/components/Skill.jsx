@@ -4,7 +4,7 @@ import BarContainer from '../containers/BarContainer'
 import AverageBarContainer from '../containers/AverageBarContainer'
 
 const insertLink = (skillName) => (
-    <Link to="/skill">
+    <Link to="/skill" className='link'>
         {skillName}
     </Link>
 )

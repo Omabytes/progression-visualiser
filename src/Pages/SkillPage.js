@@ -20,9 +20,11 @@ const returnToHomepage = (
 const SkillPage = ({ route, role }) => (
     <div className="App">
         <header className="App-header">
-            <Link to="/">
-                Back
-            </Link>
+            <div className='back'>
+                <Link to="/" className='link'>
+                    Back
+                </Link>
+            </div>
             <SkillContainer
                 skillName={ route }
                 linked={false}
