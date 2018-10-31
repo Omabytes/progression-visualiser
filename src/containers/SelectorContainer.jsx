@@ -6,12 +6,13 @@ import Selector from '../components/Selector';
 
 class SelectorContainer extends Component {
     render() {
+        let tp = this.props
         return (
             <div className="selector-container">
                 <Selector 
-                    updateRole={(newRole) => this.props.updateRole(newRole)}
-                    roles={this.props.roles}
-                    currentRole={this.props.role}
+                    updateRole={(newRole) => tp.updateRole(newRole)}
+                    roles={tp.roles}
+                    currentRole={tp.role}
                 />
             </div>
         )
