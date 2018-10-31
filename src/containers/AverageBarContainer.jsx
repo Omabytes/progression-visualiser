@@ -3,12 +3,13 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { updateScore } from '../actions/updateScore'
 import Bar from '../components/Bar';
+import { attributes } from '../resources/attributes';
 
 
 function getAverage(role, skillName, barReducer) {
     if (role === null) return 0
     let matches = barReducer.filter(el => el.role === role && el.route === skillName)
-    return matches.reduce((a, c) => a + c.score, 0) / Math.max(matches.length, 1)
+    return matches.reduce((a, c) => a + c.score, 0) / Math.max(attributes[role][skillName].length, 1)
 }
 
 class AverageBarContainer extends Component {
