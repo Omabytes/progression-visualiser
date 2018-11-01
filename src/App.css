@@ -103,7 +103,7 @@ div {
   height: auto;
   margin: 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 600px));
+  grid-template-columns: repeat(auto-fit, minmax(max-content, 600px));
   grid-auto-rows: auto;
   grid-auto-flow: dense;
   transition-delay: 0;
