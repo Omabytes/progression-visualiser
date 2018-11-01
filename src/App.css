@@ -78,6 +78,7 @@ div {
   grid-auto-flow: dense;
   margin: 20px;
   width: auto;
+  justify-content: center;
 }
 
 .skill-average-bar {
