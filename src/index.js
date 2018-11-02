@@ -10,7 +10,7 @@ import { loadState, saveState } from './localStorage'
 
 const persistedState = loadState()
 
-const store = createStore(
+export const store = createStore(
     rootReducer,
     persistedState,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
@@ -31,4 +31,3 @@ render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: http://bit.ly/CRA-PWA
 serviceWorker.register()
- 

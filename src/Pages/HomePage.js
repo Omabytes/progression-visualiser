@@ -5,6 +5,8 @@ import { updateRole } from "../actions/updateRole";
 import SkillContainer from '../containers/SkillContainer'
 import SelectorContainer from '../containers/SelectorContainer'
 import { attributes } from '../resources/attributes'
+import { store } from '../index'
+import fileDownloader from '../fileDownloader';
 
 const generateSkills = function(skillName) {
     return <SkillContainer
@@ -25,6 +27,15 @@ let roles = Object.keys(attributes)
 const HomePage = ({ role, updateRole }) => (
     <div className="App">
         <header className="App-header">
+            <div className='exporter'>
+                <div 
+                    className='link'
+                    onClick={() => fileDownloader(JSON.stringify(store.getState()))}
+                >
+                    Export Data
+                </div>
+            </div>
+            
             <SelectorContainer roles={roles}/>
         </header>
         <div className="skills">
