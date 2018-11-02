@@ -27,7 +27,20 @@ let roles = Object.keys(attributes)
 const HomePage = ({ role, updateRole }) => (
     <div className="App">
         <header className="App-header">
-            <div className='exporter'>
+            <div className='file-handlers'>
+                <div className='link'>
+                    <input
+                        className='importer'
+                        type='file'
+                        id='import'
+                    />
+                    <label
+                        className='label'
+                        for='import'
+                    >
+                        Import Data
+                    </label>
+                </div>
                 <div 
                     className='link'
                     onClick={() => fileDownloader(JSON.stringify(store.getState()))}

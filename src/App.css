@@ -31,8 +31,19 @@ div {
   width: auto;
 }
 
-.exporter {
+.file-handlers {
   margin-left: 40px;
+  cursor: pointer;
+}
+
+.importer {
+  height: 0px;
+  width: 0px;
+  opacity: 0;
+}
+
+.label {
+  cursor: pointer;
 }
 
 .link {
