@@ -1,4 +1,7 @@
-const fileDownloader = (data) => {
+import React from 'react'
+import { store } from './index'
+
+const fd = (data) => {
     const blob = new Blob([data], { type: 'application/octet-stream' });
     const blobURL = window.URL.createObjectURL(blob);
     const tempLink = document.createElement('a');
@@ -11,5 +14,13 @@ const fileDownloader = (data) => {
     window.URL.revokeObjectURL(blobURL);
   };
   
-  export default fileDownloader;
+const fileDownloader = () => (
+  <div 
+    className='link'
+    onClick={() => fd(JSON.stringify(store.getState()))}
+  >
+    Export Data
+  </div>
+)
   
+  export default fileDownloader;
