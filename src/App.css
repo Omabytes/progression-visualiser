@@ -34,11 +34,12 @@ div {
 .file-handlers {
   margin-left: 40px;
   cursor: pointer;
+  width: fit-content;
 }
 
 .importer {
-  height: 0px;
-  width: 0px;
+  height: 1px;
+  width: 1px;
   opacity: 0;
 }
 
@@ -56,6 +57,7 @@ div {
   transition-delay: 0;
   transition-duration: 0.15s;
   transition-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1);
+  width: fit-content;
 }
 
 .link:hover {
