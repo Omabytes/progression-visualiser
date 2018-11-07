@@ -58,7 +58,6 @@ div {
   transition-delay: 0;
   transition-duration: 0.15s;
   transition-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1);
-  width: fit-content;
 }
 
 .link:hover {
@@ -120,7 +119,7 @@ div {
   height: auto;
   margin: 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(max-content, 600px));
+  grid-template-columns: repeat(auto-fit, minmax(max-content, 500px));
   grid-auto-rows: auto;
   grid-auto-flow: dense;
 }
