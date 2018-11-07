@@ -33,6 +33,7 @@ div {
 
 .file-handlers {
   margin-left: 40px;
+  margin-right: 20px;
   cursor: pointer;
   width: fit-content;
 }
