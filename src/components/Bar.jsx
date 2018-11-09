@@ -2,20 +2,12 @@ import React from 'react'
 import Slider from 'rc-slider'
 import 'rc-slider/assets/index.css'
 
-
 const marks = {
     '11': '',
     '37': '',
     '63': '',
     '89': ''
 }
-
-// const styledMarks = {
-//     '11': '',
-//     '37': '',
-//     '63': '',
-//     '89': ''
-// }
 
 const railStyle = {
     backgroundColor: 'rgb(225, 233, 230)',

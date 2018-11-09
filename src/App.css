@@ -88,6 +88,15 @@ div {
   margin-top: 20px;
 }
 
+.rc-slider-dot {
+  height: 30px;
+  width: 1%;
+  margin-left: 0px;
+  border-radius: 0;
+  border: none;
+  margin-bottom: -11px;
+}
+
 .rc-slider-handle {
   opacity: 0;
 }
