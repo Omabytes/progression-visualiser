@@ -9,7 +9,7 @@ const Selector = ({ updateRole, roles, currentRole }) => (
             showSearch={false}
             value={currentRole != null ? currentRole : "Choose Role..."}
         >
-            {roles.map(role => <Select.Option key={role}>{role}</Select.Option>)}
+            {roles && roles.map(role => <Select.Option key={role}>{role}</Select.Option>)}
         </Select>
     </div>
 )
