@@ -3,7 +3,9 @@ import { uploadState } from '../uploadState'
 
 
 const mockStore = configureMockStore()
-const upState = {'test': 'test'}
+const upState = {'test': {
+    'test2': 'test2'
+}}
 
 it('returns correct action type', () => {
     return expect(uploadState().type).toEqual('UPLOAD_STATE')
