@@ -1,11 +1,9 @@
 import React from 'react'
-import Adapter from 'enzyme-adapter-react-16'
-import { shallow, configure } from 'enzyme'
+import { shallow } from 'enzyme'
 import Skill from '../Skill'
 import BarContainer from '../../containers/BarContainer'
 import AverageBarContainer from '../../containers/AverageBarContainer'
 
-configure({ adapter: new Adapter() })
 
 const disabledWrapper = shallow(<Skill barDisabled={true} skillName={'Charisma'}/>)
 const enabledWrapper = shallow(<Skill barDisabled={false} skillName={'Persuasion'}/>)
