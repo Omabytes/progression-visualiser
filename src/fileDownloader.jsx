@@ -1,5 +1,5 @@
 import React from 'react'
-import { store } from './index'
+import store from './store'
 
 const fd = (data) => {
     const blob = new Blob([data], { type: 'application/octet-stream' });

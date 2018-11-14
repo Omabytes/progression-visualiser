@@ -1,5 +1,5 @@
 import React from 'react'
-import { store } from './index'
+import store from './store'
 import { uploadState } from './actions/uploadState'
 
 const loadFile = (file) => {
