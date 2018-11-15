@@ -1,12 +1,31 @@
 import React from 'react'
 import { shallow } from 'enzyme'
+import { Link } from 'react-router-dom'
 import Skill from '../Skill'
 import BarContainer from '../../containers/BarContainer'
 import AverageBarContainer from '../../containers/AverageBarContainer'
 
 
-const disabledWrapper = shallow(<Skill barDisabled={true} skillName={'Charisma'}/>)
-const enabledWrapper = shallow(<Skill barDisabled={false} skillName={'Persuasion'}/>)
+const props = {
+    updateRoute: jest.fn()
+}
+
+const disabledWrapper = shallow(
+    <Skill
+        {...props}
+        barDisabled={true}
+        skillName={'Charisma'}
+        linked={false}
+    />
+)
+const enabledWrapper = shallow(
+    <Skill
+        {...props}
+        barDisabled={false}
+        skillName={'Persuasion'}
+        linked={true}
+    />
+)
 
 it('renders without crashing', () => {
     enabledWrapper.text()
@@ -14,7 +33,7 @@ it('renders without crashing', () => {
 
 it('contains the skillName text', () => {
     expect(enabledWrapper.containsMatchingElement(
-        <div>Persuasion</div>
+        <Link to="/skill">Persuasion</Link>
     )).toEqual(true)
     expect(disabledWrapper.containsMatchingElement(
         <div>Charisma</div>
@@ -29,4 +48,9 @@ it('contains a BarContainer when not disabled', () => {
 it('contains an AverageBarContainer when not disabled', () => {
     expect(disabledWrapper.find(BarContainer).length).toEqual(0)
     expect(disabledWrapper.find(AverageBarContainer).length).toEqual(1)
+})
+
+it('calls updateRoute when Link is clicked', () => {
+    enabledWrapper.find('.skill-text').simulate('click')
+    expect(props.updateRoute).toHaveBeenCalled()
 })
