@@ -5,8 +5,8 @@ import { updateRole } from "../actions/updateRole";
 import SkillContainer from '../containers/SkillContainer'
 import SelectorContainer from '../containers/SelectorContainer'
 import { attributes } from '../resources/attributes'
-import FileDownloader from '../fileDownloader'
-import FileUploader from '../fileUploader'
+import FileDownloader from '../FileDownloader'
+import FileUploader from '../FileUploader'
 
 const generateSkills = function(skillName) {
     return <SkillContainer
