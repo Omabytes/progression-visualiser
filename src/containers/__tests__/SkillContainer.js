@@ -1,33 +1,36 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import store from '../../store'
-import { Provider } from 'react-redux'
+import configureMockStore from 'redux-mock-store'
 import SkillContainer from '../SkillContainer'
 
+const mockStore = configureMockStore()
+const store = mockStore({ 
+    skillReducer : {
+        route: 'Charisma'
+    }
+}) 
 
 const props = {
     updateRoute: jest.fn()
 }
 
 const enabledWrapper = shallow(
-    <Provider store={store}>
-        <SkillContainer
-            {...props}
-            skillName={'Persuasion'}
-            linked={true}
-            barDisabled={false}
-        />
-    </Provider>
+    <SkillContainer
+        {...props}
+        skillName={'Persuasion'}
+        linked={true}
+        barDisabled={false}
+        store={store}
+    />
 )
 const disabledWrapper = shallow(
-    <Provider store={store}>
-        <SkillContainer
-            {...props}
-            skillName={'Charisma'}
-            linked={false}
-            barDisabled={true}
-        />
-    </Provider>
+    <SkillContainer
+        {...props}
+        skillName={'Charisma'}
+        linked={false}
+        barDisabled={true}
+        store={store}
+    />
 )
 
 it('renders without crashing', () => {

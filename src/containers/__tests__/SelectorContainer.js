@@ -1,14 +1,13 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import store from '../../store'
-import { Provider } from 'react-redux'
+import configureMockStore from 'redux-mock-store'
 import SelectorContainer from '../SelectorContainer'
 
+const mockStore = configureMockStore()
+const store = mockStore({}) 
 
 const wrapper = shallow(
-    <Provider store={store}>
-        <SelectorContainer />
-    </Provider>
+    <SelectorContainer store={store} />
 )
 
 const props = {
