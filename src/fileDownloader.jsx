@@ -14,7 +14,7 @@ const fd = (data) => {
     window.URL.revokeObjectURL(blobURL);
   };
   
-const fileDownloader = () => (
+const FileDownloader = () => (
   <div 
     className='link'
     onClick={() => fd(JSON.stringify(store.getState()))}
@@ -23,4 +23,4 @@ const fileDownloader = () => (
   </div>
 )
   
-  export default fileDownloader;
+  export default FileDownloader;

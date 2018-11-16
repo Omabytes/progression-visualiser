@@ -10,7 +10,7 @@ const loadFile = (file) => {
     }
 }
 
-const fileUploader = () => (
+const FileUploader = () => (
     <div className='link'>
         <input
             className='importer'
@@ -27,4 +27,4 @@ const fileUploader = () => (
     </div>
 )
 
-export default fileUploader
+export default FileUploader
