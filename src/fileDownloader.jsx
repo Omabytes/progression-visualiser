@@ -7,7 +7,7 @@ const fd = (data) => {
     const tempLink = document.createElement('a');
     tempLink.style.display = 'none';
     tempLink.href = blobURL;
-    tempLink.setAttribute('download', 'testeeeeees');
+    tempLink.setAttribute('download', 'score-profile');
     document.body.appendChild(tempLink);
     tempLink.click();
     document.body.removeChild(tempLink);
